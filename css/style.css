@@ -2,6 +2,7 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -14,7 +15,7 @@ nav {
 	padding-top: 10vh;
 	position: fixed;
 	background-color: #fff;
-	box-shadow: 0 0 8px 0px black;
+	box-shadow: 0 0 16px 0px rgba(175, 175, 175, 0.5);
 }
 
 nav ul {
@@ -156,6 +157,11 @@ h3 {
 	text-decoration: none;
 }
 
+.info a {
+	text-decoration: none;
+	color: #523BFF;
+}
+
 .intro-text {
 	font-weight: bold;
 	font-size: 3em;
@@ -254,9 +260,15 @@ h3 {
 }
 
 .card:hover {
-	box-shadow: 0 5px 16px 0 #AAA;
+	box-shadow: 0 5px 16px 0 #d2d2d2;
+	border: none;
 	transform: translateY(-5px);
 	transition: transform 200ms linear, box-shadow 200ms linear;
+}
+.card:active {
+	box-shadow: 0 2px 8px 0 #cac3ff;
+	transform: translateY(-2px);
+	transition: transform 100ms linear, box-shadow 100ms linear;
 }
 
 .title {
@@ -275,16 +287,30 @@ h3 {
 	float: right;
 }
 
+#weKnowFolder {
+    width: 100%;
+    height: auto;
+    max-height: 100%;
+}
+
 .wrapper-img__portfolio {
 	width: 100%;
 	height: auto;
 	padding-top: 50px;
 }
 
+.wrapper-for-float:after {
+	content: " ";
+	display: table;
+	clear: both;
+}
+
 .wrapper-img__portfolio-50 {
-	margin-top: 50px;
-	width: 50%;
+	width: calc(50% - 1.5625%);
 	float: left;
+}
+.wrapper-img__portfolio-50:first-child {
+	margin-right: 3.125%;
 }
 
 img {
@@ -485,10 +511,19 @@ img {
 		padding-top: 50px;
 		width: 100%;
 	}
+	.wrapper-img__portfolio{
+		padding-top: 25px;
+	}
 }
 
-@media (max-width: 325px) {
+@media (max-width: 480px) {
 	h2 {
 		font-size: 2.25em;
+	}
+	.intro-text {
+		font-size: 1em;
+	}
+	.section-resume {
+		min-height: 50vh;
 	}
 }
